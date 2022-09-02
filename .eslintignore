@@ -1,0 +1,5 @@
+mock-node-server/
+server/
+src/react-app-env.d.ts
+src/setupProxy.js
+*.svg
