@@ -19,7 +19,7 @@ export default function Sidebar() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: "#1C1E24",
     padding: 20,

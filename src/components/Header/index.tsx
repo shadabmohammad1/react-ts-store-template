@@ -16,8 +16,7 @@ export default function Header() {
           container
           direction="column"
           justifyContent="center"
-          alignItems="center"
-        >
+          alignItems="center">
           <Grid item>
             <Options />
           </Grid>

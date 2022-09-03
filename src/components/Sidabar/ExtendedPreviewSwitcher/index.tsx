@@ -17,8 +17,7 @@ export default function ExtendedPreviewSwitcher() {
           container
           direction="row"
           justifyContent="space-between"
-          alignItems="center"
-        >
+          alignItems="center">
           <Grid item md="auto">
             <Typography variant="subtitle2">Version (4)</Typography>
           </Grid>
@@ -31,16 +30,14 @@ export default function ExtendedPreviewSwitcher() {
             container
             direction="row"
             justifyContent="space-between"
-            alignItems="flex-start"
-          >
+            alignItems="flex-start">
             <Grid item md={10}>
               <Grid
                 container
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="flex-start"
-                spacing={2}
-              >
+                spacing={2}>
                 <Grid item md="auto">
                   <IconButton Icon={KeyboardArrowLeftIcon} />
                 </Grid>
@@ -49,8 +46,7 @@ export default function ExtendedPreviewSwitcher() {
                     container
                     direction="row"
                     justifyContent="flex-start"
-                    alignItems="center"
-                  >
+                    alignItems="center">
                     <LocalMoviesIcon className={classes.icon} />
                     <Typography variant="subtitle2">BUNNY _080_0200</Typography>
                   </Grid>
@@ -58,8 +54,7 @@ export default function ExtendedPreviewSwitcher() {
                     container
                     direction="row"
                     justifyContent="space-between"
-                    alignItems="center"
-                  >
+                    alignItems="center">
                     <Grid item md="auto">
                       <Typography variant="body2">Artist</Typography>
                     </Grid>
@@ -86,7 +81,7 @@ export default function ExtendedPreviewSwitcher() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     padding: "0px !important",

@@ -56,16 +56,14 @@ function VideoPlayer({ height, width }: Props) {
           className={classes.playerButtonSection}
           direction="row"
           justifyContent="space-between"
-          alignItems="center"
-        >
+          alignItems="center">
           <Grid item md={3}>
             <Grid
               container
               direction="row"
               justifyContent="flex-start"
               alignItems="center"
-              spacing={1}
-            >
+              spacing={1}>
               <Grid item>
                 {playing ? (
                   <IconButton Icon={PauseIcon} onClick={() => pause()} />
@@ -95,8 +93,7 @@ function VideoPlayer({ height, width }: Props) {
               direction="row"
               justifyContent="flex-end"
               alignItems="center"
-              spacing={1}
-            >
+              spacing={1}>
               <Grid item>
                 <IconButton Icon={ModeEditIcon} />
               </Grid>
@@ -117,7 +114,7 @@ function VideoPlayer({ height, width }: Props) {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     background: theme.palette.background.default,
   },
