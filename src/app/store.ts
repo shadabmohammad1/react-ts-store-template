@@ -1,4 +1,5 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+
 import previewVideoReducer from "store/preview-video/videoList";
 
 export const store = configureStore({

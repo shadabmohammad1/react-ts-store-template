@@ -1,9 +1,9 @@
-import React from "react";
 import { Grid, Avatar, Typography, Chip } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import React from "react";
 
 interface Props {
   dp: string;
@@ -67,13 +67,8 @@ export default function Link({
           <Grid item md={12}>
             <Grid container spacing={1}>
               {tags.map((tag) => (
-                <Grid item>
-                  <Chip
-                    size="small"
-                    label={tag}
-                    className={classes.tag}
-                    key={tag}
-                  />
+                <Grid item key={tag}>
+                  <Chip size="small" label={tag} className={classes.tag} />
                 </Grid>
               ))}
             </Grid>

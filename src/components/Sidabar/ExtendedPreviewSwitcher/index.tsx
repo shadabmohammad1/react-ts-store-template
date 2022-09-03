@@ -1,12 +1,12 @@
-import React from "react";
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
+import React from "react";
 
-import Link from "components/Core/Link";
 import IconButton from "components/Core/IconButton";
+import Link from "components/Core/Link";
 
 export default function ExtendedPreviewSwitcher() {
   const classes = useStyles();

@@ -1,25 +1,25 @@
-// Third Party Import
-import React, { useState, useMemo } from "react";
 import {
+  Button,
+  Checkbox,
+  Divider,
+  FormControlLabel,
+  FormGroup,
   Grid,
-  Typography,
   Modal,
   TextField,
-  Divider,
-  FormGroup,
-  FormControlLabel,
-  Checkbox,
-  Button,
+  Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CloseIcon from "@mui/icons-material/Close";
+import React, { useState } from "react";
 
-// State Import
-import { useAppSelector, useAppDispatch } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import {
   allVideosList,
   setSelectedVideos,
 } from "store/preview-video/videoList";
+
+// State Imports
 
 interface Props {
   open: boolean;

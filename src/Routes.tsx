@@ -1,6 +1,6 @@
+import { ThemeProvider } from "@material-ui/core";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core";
 
 import Home from "components/Home";
 

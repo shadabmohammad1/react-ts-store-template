@@ -1,12 +1,12 @@
-import React from "react";
 import { Grid, Button } from "@material-ui/core";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
 import { makeStyles } from "@material-ui/core/styles";
-import AttachFileIcon from "@mui/icons-material/AttachFile";
-import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MicIcon from "@mui/icons-material/Mic";
 import SendIcon from "@mui/icons-material/Send";
+import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
+import React from "react";
 
 import IconButton from "components/Core/IconButton";
 

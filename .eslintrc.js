@@ -16,6 +16,10 @@ module.exports = {
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
   ],
   rules: {
     "no-console": "off",  //["error", { allow: ["info", "warn", "error"] }],
@@ -45,7 +49,35 @@ module.exports = {
     "jsx-a11y/no-noninteractive-element-interactions": 0,
     "no-underscore-dangle": 0,
     "react/no-unescaped-entities": ["error", { forbid: [">", "}"] }],
-    "no-param-reassign": 0
+    "no-param-reassign": 0,
+    "@typescript-eslint/no-unused-vars": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "import/no-unresolved": [2, {commonjs: true, amd: true}],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin", // Built-in imports (come from NodeJS native) go first
+          "external", // <- External imports
+          "internal", // <- Absolute imports
+          ["sibling", "parent"], // <- Relative imports, the sibling and parent types they can be mingled together
+          "index", // <- index imports
+          "unknown", // <- unknown
+        ],
+        "newlines-between": "always",
+        alphabetize: {
+          /* sort in ascending order. Options: ["ignore", "asc", "desc"] */
+          order: "asc",
+          /* ignore case. Options: [true, false] */
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
   overrides: [
     {

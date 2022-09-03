@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import Header from "components/Header";
-import VideoPlayer from "components/VideoPlayer";
-import Sidebar from "components/Sidabar";
-
-import { videoListAsync } from "store/preview-video/videoList";
 import { AppDispatch } from "app/store";
+import Header from "components/Header";
+import Sidebar from "components/Sidabar";
+import VideoPlayer from "components/VideoPlayer";
+import { videoListAsync } from "store/preview-video/videoList";
 
 function Home() {
   const classes = useStyles();
@@ -16,7 +15,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(videoListAsync());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Grid container className={classes.root}>

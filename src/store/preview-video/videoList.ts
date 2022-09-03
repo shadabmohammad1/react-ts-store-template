@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import type { RootState } from "app/store";
 
-import { PreviewVideoListType } from "models/PreviewVideo";
 import { getPreviewVideoListAPI } from "apis/previewVideo";
+import type { RootState } from "app/store";
+import { PreviewVideoListType } from "models/PreviewVideo";
 
 export interface PreviewVideoState {
   videoList: PreviewVideoListType;

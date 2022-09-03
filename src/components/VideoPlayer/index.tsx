@@ -1,23 +1,19 @@
-// Third Party Import
-import React, { useEffect, useState } from "react";
 import { Grid, Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ReactPlayer from "react-player";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import PauseIcon from "@mui/icons-material/Pause";
-import LoopOutlinedIcon from "@mui/icons-material/LoopOutlined";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-import ModeEditIcon from "@mui/icons-material/ModeEdit";
-import SearchIcon from "@mui/icons-material/Search";
-import OpenWithIcon from "@mui/icons-material/OpenWith";
 import CropFreeIcon from "@mui/icons-material/CropFree";
+import LoopOutlinedIcon from "@mui/icons-material/LoopOutlined";
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
+import OpenWithIcon from "@mui/icons-material/OpenWith";
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import SearchIcon from "@mui/icons-material/Search";
+import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import React, { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 
-// State Import
 import { useAppSelector } from "app/hooks";
-import { playingVideo } from "store/preview-video/videoList";
-
-// Custom Component Import
 import IconButton from "components/Core/IconButton";
+import { playingVideo } from "store/preview-video/videoList";
 
 interface Props {
   height?: number;

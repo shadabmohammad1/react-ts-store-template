@@ -1,10 +1,10 @@
-import React from "react";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Divider from "@mui/material/Divider";
+import React from "react";
 
-import ExtendedPreviewSwitcher from "components/Sidabar/ExtendedPreviewSwitcher";
 import Comments from "components/Sidabar/Comments";
+import ExtendedPreviewSwitcher from "components/Sidabar/ExtendedPreviewSwitcher";
 
 export default function Sidebar() {
   const classes = useStyles();

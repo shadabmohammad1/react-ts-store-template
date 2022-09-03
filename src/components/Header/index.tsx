@@ -1,8 +1,8 @@
-import React from "react";
 import { Grid } from "@material-ui/core";
+import React from "react";
 
-import PreviewSwitcher from "./PreviewSwitcher";
 import Options from "./Options";
+import PreviewSwitcher from "./PreviewSwitcher";
 
 export default function Header() {
   return (
