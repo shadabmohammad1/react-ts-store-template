@@ -36,24 +36,21 @@ export default function PreviewSwitcher() {
           container
           direction="row"
           justifyContent="center"
-          alignItems="center"
-        >
+          alignItems="center">
           <Typography variant="body2">Project: {video?.project}</Typography>
         </Grid>
         <Grid
           container
           direction="row"
           justifyContent="center"
-          alignItems="center"
-        >
+          alignItems="center">
           <Typography variant="subtitle1">{video?.name}</Typography>
         </Grid>
         <Grid
           container
           direction="row"
           justifyContent="center"
-          alignItems="center"
-        >
+          alignItems="center">
           <Typography variant="caption">
             {index + 1}/{totalVideos}
           </Typography>
@@ -69,7 +66,7 @@ export default function PreviewSwitcher() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {},
   navigationButton: {
     // backgroundColor: theme.palette.background.paper,
