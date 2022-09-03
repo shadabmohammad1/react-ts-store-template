@@ -21,8 +21,7 @@ export default function Options() {
       justifyContent="center"
       alignItems="center"
       className={classes.root}
-      spacing={2}
-    >
+      spacing={2}>
       <Grid item>
         <IconButton
           Icon={ShareOutlinedIcon}
@@ -35,8 +34,7 @@ export default function Options() {
           color="secondary"
           variant="outlined"
           className={classes.compareButton}
-          onClick={() => handleOpen()}
-        >
+          onClick={() => handleOpen()}>
           Compare
         </Button>
         <AllVideosModal open={open} handleClose={handleClose} />
@@ -52,7 +50,7 @@ export default function Options() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {},
   compareButton: {
     padding: "5px 40px",

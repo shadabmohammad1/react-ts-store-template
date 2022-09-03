@@ -24,35 +24,34 @@ export const videoListAsync = createAsyncThunk(
     const response = await getPreviewVideoListAPI();
     // The value we return becomes the `fulfilled` action payload
     return response;
-  }
+  },
 );
 
 export const previewVideoSlice = createSlice({
   name: "previewVideo",
   initialState,
   reducers: {
-    setNextVideo: (state) => {
+    setNextVideo: state => {
       state.playingVideoIndex =
         (state.playingVideoIndex + 1) % state.selectedVideoList.length;
     },
-    setPreviousVideo: (state) => {
+    setPreviousVideo: state => {
       state.playingVideoIndex =
         (state.selectedVideoList.length + state.playingVideoIndex - 1) %
         state.selectedVideoList.length;
     },
     setSelectedVideos: (state, action) => {
-      console.log("==== === action", action.payload);
-      state.selectedVideoList = state.videoList.filter((video) =>
-        action.payload.includes(video.id)
+      state.selectedVideoList = state.videoList.filter(video =>
+        action.payload.includes(video.id),
       );
     },
     // incrementByAmount: (state, action) => {
     //   state.value += action.payload;
     // },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
-      .addCase(videoListAsync.pending, (state) => {
+      .addCase(videoListAsync.pending, state => {
         state.apiStatus = "loading";
       })
       .addCase(videoListAsync.fulfilled, (state, action) => {
@@ -60,7 +59,7 @@ export const previewVideoSlice = createSlice({
         state.videoList = action.payload as PreviewVideoListType;
         state.selectedVideoList = action.payload as PreviewVideoListType;
       })
-      .addCase(videoListAsync.rejected, (state) => {
+      .addCase(videoListAsync.rejected, state => {
         state.apiStatus = "failed";
       });
   },

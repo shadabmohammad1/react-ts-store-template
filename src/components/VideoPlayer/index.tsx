@@ -28,7 +28,6 @@ function VideoPlayer({ height, width }: Props) {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // Update the document title using the browser API
-    console.log("ReactPlayer.canPlay(url)", ReactPlayer.canPlay(video));
   }, [video]);
 
   function play() {

@@ -22,7 +22,7 @@ module.exports = {
     "plugin:import/warnings",
   ],
   rules: {
-    "no-console": "off",  //["error", { allow: ["info", "warn", "error"] }],
+    "no-console": ["error", { allow: ["info", "warn", "error"] }],
     "no-plusplus": 0,
     "class-methods-use-this": 0,
     "react/jsx-filename-extension": 0,

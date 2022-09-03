@@ -49,7 +49,6 @@ export default function AllVideosModal({ open, handleClose }: Props) {
   };
 
   const compareVideos = () => {
-    console.log("compareVideos", videoIds);
     dispatch(setSelectedVideos(videoIds));
     setVideoIds([]);
     handleClose();
@@ -60,16 +59,14 @@ export default function AllVideosModal({ open, handleClose }: Props) {
       open={open}
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
+      aria-describedby="modal-modal-description">
       <Grid container className={classes.container} spacing={2}>
         <Grid item md={12}>
           <Grid
             container
             direction="row"
             justifyContent="space-between"
-            alignItems="center"
-          >
+            alignItems="center">
             <Grid item>
               <Typography variant="body1">
                 Select Versions to compare
@@ -88,8 +85,7 @@ export default function AllVideosModal({ open, handleClose }: Props) {
             container
             direction="row"
             justifyContent="center"
-            alignItems="center"
-          >
+            alignItems="center">
             <Grid item md={11}>
               <TextField
                 size="small"
@@ -137,14 +133,12 @@ export default function AllVideosModal({ open, handleClose }: Props) {
             direction="row"
             justifyContent="flex-end"
             alignItems="center"
-            spacing={1}
-          >
+            spacing={1}>
             <Grid item>
               <Button
                 color="secondary"
                 variant="outlined"
-                onClick={handleClose}
-              >
+                onClick={handleClose}>
                 Cancel
               </Button>
             </Grid>
@@ -152,8 +146,7 @@ export default function AllVideosModal({ open, handleClose }: Props) {
               <Button
                 color="primary"
                 variant="contained"
-                onClick={compareVideos}
-              >
+                onClick={compareVideos}>
                 Compare
               </Button>
             </Grid>
@@ -164,7 +157,7 @@ export default function AllVideosModal({ open, handleClose }: Props) {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   container: {
     position: "absolute",
     top: "50%",

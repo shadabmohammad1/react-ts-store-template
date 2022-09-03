@@ -32,16 +32,14 @@ export default function Link({
           container
           direction="row"
           justifyContent="space-between"
-          alignItems="center"
-        >
+          alignItems="center">
           <Grid item>
             <Grid
               container
               direction="row"
               justifyContent="flex-start"
               alignItems="center"
-              spacing={1}
-            >
+              spacing={1}>
               <Grid item>
                 <Avatar alt={name} src={dp} />
               </Grid>
@@ -66,7 +64,7 @@ export default function Link({
         <Grid container spacing={1} className={classes.contentSection}>
           <Grid item md={12}>
             <Grid container spacing={1}>
-              {tags.map((tag) => (
+              {tags.map(tag => (
                 <Grid item key={tag}>
                   <Chip size="small" label={tag} className={classes.tag} />
                 </Grid>
@@ -96,7 +94,7 @@ export default function Link({
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     color: "#6BAFFF",
     textTransform: "none",

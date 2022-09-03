@@ -19,8 +19,7 @@ export default function IconButtonV2() {
           container
           direction="row"
           justifyContent="space-between"
-          alignItems="center"
-        >
+          alignItems="center">
           <Grid item>
             <Typography variant="subtitle2">
               Comments({comments.length})
@@ -32,8 +31,7 @@ export default function IconButtonV2() {
               direction="row"
               justifyContent="center"
               alignItems="center"
-              spacing={2}
-            >
+              spacing={2}>
               <Grid item>
                 <IconButton Icon={FilterAltOutlinedIcon} />
               </Grid>
@@ -42,9 +40,8 @@ export default function IconButtonV2() {
                   variant="outlined"
                   color="inherit"
                   startIcon={<PushPinIcon />}
-                  size="small"
-                >
-                  {comments.filter((comment) => comment.pinned).length} Pins
+                  size="small">
+                  {comments.filter(comment => comment.pinned).length} Pins
                 </Button>
               </Grid>
             </Grid>
@@ -52,7 +49,7 @@ export default function IconButtonV2() {
         </Grid>
         <Grid container spacing={2}>
           <Grid item md={12}>
-            {comments.map((comment) => (
+            {comments.map(comment => (
               <Comment
                 name={comment.name}
                 dp={comment.dp}
@@ -72,7 +69,7 @@ export default function IconButtonV2() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 20,
   },

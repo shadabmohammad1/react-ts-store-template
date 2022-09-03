@@ -19,8 +19,7 @@ export default function CommentBox() {
           container
           direction="row"
           justifyContent="center"
-          alignItems="center"
-        >
+          alignItems="center">
           <TextareaAutosize
             className={classes.commentArea}
             minRows={7}
@@ -34,8 +33,7 @@ export default function CommentBox() {
           direction="row"
           justifyContent="space-between"
           alignItems="center"
-          className={classes.actions}
-        >
+          className={classes.actions}>
           <Grid item>
             <Grid container spacing={2}>
               <Grid item>
@@ -63,7 +61,7 @@ export default function CommentBox() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   commentArea: {
     width: "90%",
     height: "200px",

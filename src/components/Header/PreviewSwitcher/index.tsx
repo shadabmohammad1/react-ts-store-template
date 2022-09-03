@@ -26,7 +26,6 @@ export default function PreviewSwitcher() {
         <IconButton
           Icon={KeyboardArrowLeftIcon}
           onClick={() => {
-            console.log("previousVideo");
             dispatch(setPreviousVideo());
           }}
         />

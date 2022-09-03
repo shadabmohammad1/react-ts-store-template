@@ -13,14 +13,13 @@ export default function Link({ label, onClick }: Props) {
     <Button
       variant="text"
       className={classes.root}
-      onClick={() => onClick && onClick()}
-    >
+      onClick={() => onClick && onClick()}>
       {label}
     </Button>
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     color: "#6BAFFF",
     textTransform: "none",

@@ -28,14 +28,13 @@ export default function IconButtonV2({
       ])}
       variant={variant}
       color={color || "primary"}
-      onClick={() => onClick && onClick()}
-    >
+      onClick={() => onClick && onClick()}>
       <Icon fontSize={fontSize || "medium"} className={classes.icon} />
     </Button>
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "#292929",
     borderRadius: "5px !important",
