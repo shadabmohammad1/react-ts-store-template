@@ -8,6 +8,10 @@
   src: url('../fonts/poppins/Poppins-Light.otf');
 }
 
-no-text-transformation {
+.no-text-transformation {
   text-transform: none !important;
+}
+
+.test {
+ margin: 10px
 }
