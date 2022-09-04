@@ -6,12 +6,21 @@ import MicIcon from "@mui/icons-material/Mic";
 import SendIcon from "@mui/icons-material/Send";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
-import React from "react";
+import Picker, { SKIN_TONE_LIGHT, IEmojiData } from "emoji-picker-react";
+import React, { useState } from "react";
 
 import IconButton from "components/Core/IconButton";
 
 export default function CommentBox() {
   const classes = useStyles();
+  const [commentText, setCommentText] = useState("");
+  const [showEmojiBox, setShowEmojiBox] = useState(false);
+
+  function onEmojiClick(data: IEmojiData) {
+    console.error(data);
+    setCommentText(commentText + data.emoji);
+  }
+
   return (
     <Grid container>
       <Grid item md={12}>
@@ -24,6 +33,8 @@ export default function CommentBox() {
             className={classes.commentArea}
             minRows={7}
             placeholder="Empty"
+            value={commentText}
+            onChange={({ target }) => setCommentText(target.value)}
           />
         </Grid>
       </Grid>
@@ -40,7 +51,10 @@ export default function CommentBox() {
                 <IconButton Icon={AttachFileIcon} />
               </Grid>
               <Grid item>
-                <IconButton Icon={SentimentSatisfiedAltIcon} />
+                <IconButton
+                  Icon={SentimentSatisfiedAltIcon}
+                  onClick={() => setShowEmojiBox(!showEmojiBox)}
+                />
               </Grid>
               <Grid item>
                 <IconButton Icon={AlternateEmailIcon} />
@@ -57,13 +71,21 @@ export default function CommentBox() {
           </Grid>
         </Grid>
       </Grid>
+      {showEmojiBox ? (
+        <Picker
+          onEmojiClick={(event, data) => onEmojiClick(data as IEmojiData)}
+          disableAutoFocus
+          native
+          skinTone={SKIN_TONE_LIGHT}
+        />
+      ) : null}
     </Grid>
   );
 }
 
 const useStyles = makeStyles(theme => ({
   commentArea: {
-    width: "90%",
+    width: "100%",
     height: "200px",
     backgroundColor: "#161616",
     fontFamily: "Poppins-Regular",
@@ -85,8 +107,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#161616",
     border: "1px solid #3F3F3F",
     borderTop: "none",
-    width: "95.3%",
-    marginLeft: 10,
+    // width: "95.3%",
+
     "& .MuiSvgIcon-root": {
       fontSize: 14,
     },

@@ -9,6 +9,7 @@ export interface PreviewVideoState {
   selectedVideoList: PreviewVideoListType;
   playingVideoIndex: number;
   apiStatus: "idle" | "loading" | "failed";
+  sidebarOpen: boolean;
 }
 
 const initialState: PreviewVideoState = {
@@ -16,6 +17,7 @@ const initialState: PreviewVideoState = {
   selectedVideoList: [],
   playingVideoIndex: 0,
   apiStatus: "idle",
+  sidebarOpen: false,
 };
 
 export const videoListAsync = createAsyncThunk(
@@ -45,9 +47,12 @@ export const previewVideoSlice = createSlice({
         action.payload.includes(video.id),
       );
     },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload;
-    // },
+    openSidebar: state => {
+      state.sidebarOpen = true;
+    },
+    closeSidebar: state => {
+      state.sidebarOpen = false;
+    },
   },
   extraReducers: builder => {
     builder
@@ -66,8 +71,13 @@ export const previewVideoSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setNextVideo, setPreviousVideo, setSelectedVideos } =
-  previewVideoSlice.actions;
+export const {
+  setNextVideo,
+  setPreviousVideo,
+  setSelectedVideos,
+  openSidebar,
+  closeSidebar,
+} = previewVideoSlice.actions;
 
 // Getters
 export const playingVideo = (state: RootState) =>
@@ -84,5 +94,7 @@ export const currentIndex = (state: RootState) =>
 
 export const videoCount = (state: RootState) =>
   state.previewVideo.selectedVideoList.length;
+
+export const sidebarOpen = (state: RootState) => state.previewVideo.sidebarOpen;
 
 export default previewVideoSlice.reducer;

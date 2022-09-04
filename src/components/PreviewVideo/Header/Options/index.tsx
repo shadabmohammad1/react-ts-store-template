@@ -4,15 +4,23 @@ import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import TableChartOutlinedIcon from "@mui/icons-material/TableChartOutlined";
 import React, { useState } from "react";
 
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import IconButton from "components/Core/IconButton";
+import {
+  openSidebar,
+  closeSidebar,
+  sidebarOpen,
+} from "store/preview-video/videoList";
 
 import AllVideosModal from "./AllVideosModal";
 
 export default function Options() {
+  const dispatch = useAppDispatch();
+  const isSidebarOpened = useAppSelector(sidebarOpen);
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
-  const handleOpen = () => setOpen(true);
+  const [open, setModalOpen] = useState(false);
+  const handleModalClose = () => setModalOpen(false);
+  const handleModalOpen = () => setModalOpen(true);
 
   return (
     <Grid
@@ -34,23 +42,26 @@ export default function Options() {
           color="secondary"
           variant="outlined"
           className={classes.compareButton}
-          onClick={() => handleOpen()}>
+          onClick={() => handleModalOpen()}>
           Compare
         </Button>
-        <AllVideosModal open={open} handleClose={handleClose} />
+        <AllVideosModal open={open} handleClose={handleModalClose} />
       </Grid>
       <Grid item>
         <IconButton
           Icon={TableChartOutlinedIcon}
           variant="outlined"
           color="secondary"
+          onClick={() =>
+            isSidebarOpened ? dispatch(closeSidebar()) : dispatch(openSidebar())
+          }
         />
       </Grid>
     </Grid>
   );
 }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {},
   compareButton: {
     padding: "5px 40px",

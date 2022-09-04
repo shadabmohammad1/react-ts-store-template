@@ -19,7 +19,6 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings",
   ],
   rules: {
     "no-console": ["error", { allow: ["info", "warn", "error"] }],

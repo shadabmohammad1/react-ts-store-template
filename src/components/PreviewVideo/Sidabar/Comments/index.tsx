@@ -5,8 +5,8 @@ import PushPinIcon from "@mui/icons-material/PushPin";
 import React from "react";
 
 import IconButton from "components/Core/IconButton";
-import Comment from "components/Sidabar/Comments/Comment";
-import CommentBox from "components/Sidabar/Comments/CommentBox";
+import Comment from "components/PreviewVideo/Sidabar/Comments/Comment";
+import CommentBox from "components/PreviewVideo/Sidabar/Comments/CommentBox";
 
 import comments from "./comments";
 
